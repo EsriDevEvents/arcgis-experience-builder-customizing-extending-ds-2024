@@ -1,6 +1,6 @@
-# 2024 Esri Federal GIS Conference | ArcGIS Experience Builder for Developers: Widgets, Development, Deployment, and Automation
+# 2024 Esri DevSummit | ArcGIS Experience Builder: Customizing and Extending
 
-- Schedule: [Monday, 12 February, 2024 - 1:00pm EST](https://registration.esri.com/flow/esri/24fedgis/eventportal/page/detailed-agenda/session/1699390201843001KXLb)
-- [Slides](https://shawnmgoulet.github.io/2024-fed-uc-arcgis-exb-for-devs/slides/)
+- Schedule: [Wednesday, 13 March, 2024 - 5:30 PM - 6:30 PM PDT](https://devsummit2024.esri.com/flow/esri/24epcdev/deveventportal/page/detailed-agenda/session/1699142487777001xLlM)
+- [Slides](https://shawnmgoulet.github.io/2024-dev-summit-arcgis-exb-customizing-extending/slides/)
 - Code:
-  - [Widget](https://github.com/shawnmgoulet/2024-fed-uc-arcgis-exb-for-devs/tree/master/code)
+  - [Widget](https://github.com/shawnmgoulet/2024-dev-summit-arcgis-exb-customizing-extending/tree/master/code)
