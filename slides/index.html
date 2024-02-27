@@ -43,17 +43,18 @@
   <div class="reveal">
     <div class="slides">
       <section data-background="img/2024/devsummit/1.jpg" data-background-size="contain">
-        <h1 style="text-align: left; font-size: 60px">ArcGIS Experience Builder for Developers: Widgets, Development, Deployment, and Automation</h1>
+        <h1 style="text-align: left; font-size: 60px">ArcGIS Experience Builder: Customizing and Extending</h1>
         <p style="
               text-align: left;
               font-size: 30px;
               color: var(--r-section-subhead-color);
             ">
-          Shawn Goulet
+          <b>Sam Matenaer (Esri PS | Midwest Delivery Center) & Shawn Goulet (Esri PS | Atlantic Delivery Center)</b>
         </p>
         <p style="text-align: left; font-size: 30px">
           Slides:
-          <a href="https://links.esri.com/2024-fed-uc-arcgis-exb-for-devs"><code>links.esri.com/2024-fed-uc-arcgis-exb-for-devs</code></a>
+          <!-- TODO Create & change all non-Esri links to links.esri.com? -->
+          <a href="https://shawnmgoulet.github.io/2024-dev-summit-arcgis-exb-customizing-extending/slides/"><code>https://shawnmgoulet.github.io/2024-dev-summit-arcgis-exb-customizing-extending/slides/</code></a>
         </p>
       </section>
 
@@ -61,7 +62,7 @@
         <script type="text/template">
           ## Agenda
 
-          - Intro to Experience Builder
+          - <span style="opacity: 0.5;">Intro to Experience Builder</span>
           - Custom widgets
           - Code collaboration
           - Deployment
@@ -85,11 +86,11 @@
       </section> -->
 
       <section data-background="img/2024/devsummit/2.jpg">
-        <h2 style="text-align: left">Intro to Experience Builder</h2>
+        <h2 style="text-align: left; opacity: 0.5;">Intro to Experience Builder</h2>
       </section>
 
       <section data-background="img/2024/devsummit/2.jpg">
-        <h2>What is ArcGIS Experience Builder</h2>
+        <h2 style="opacity: 0.5;">What is ArcGIS Experience Builder</h2>
         <table>
           <tr>
             <td style="width: 50%">
@@ -103,22 +104,22 @@
               </ul>
             </td>
             <td>
-              <!-- <img style="vertical-align: top" src="img/exb-jsapi.jpg" /> -->
+              <img style="vertical-align: top" src="img/exb-jsapi.png" />
             </td>
           </tr>
         </table>
       </section>
 
       <section data-background="img/2024/devsummit/2.jpg">
-        <h2>ArcGIS Experience Builder Editions</h2>
+        <h2 style="opacity: 0.5;">ArcGIS Experience Builder Editions</h2>
         <table>
           <tr>
             <td style="width: 50%; vertical-align: top">
               <ul>
                 <li>ArcGIS Online and ArcGIS Enterprise</li>
                 <ul>
-                  <li>URL: experience.arcgis.com</li>
-                  <li>ArcGIS Enterprise 10.8.1 and up</li>
+                  <li><a href="http://experience.arcgis.com" target="_blank">experience.arcgis.com</a></li>
+                  <li>ArcGIS Enterprise 10.8.1 and above</li>
                 </ul>
               </ul>
               <br /><br /><br />
@@ -127,28 +128,29 @@
                 <li>Developer Edition</li>
                 <ul>
                   <li>
-                    Download from the Developers website and install locally
+                    <a href="https://developers.arcgis.com/experience-builder/guide/install-guide/" target="_blank">Download</a> from the Developers website and install locally
                   </li>
+                  <li><a href="https://developers.arcgis.com/experience-builder/guide/install-guide/#install-as-a-windows-service" target="_blank">Install as a Windows Service</a> for team Experience Builder projects</li>
                   <li>Sign in to ArcGIS Online / Enterprise</li>
                 </ul>
               </ul>
             </td>
-            <!-- <td style="text-align: center">
+            <td style="text-align: center">
               <img
                 style="max-height: 400px"
-                src="img/experience.arcgis.com.jpg"
+                src="img/experience.arcgis.com.png"
               />
               <img
                 style="max-height: 400px"
-                src="img/developers.arcgis.com.jpg"
+                src="img/developers.arcgis.com.png"
               />
-            </td> -->
+            </td>
           </tr>
         </table>
       </section>
 
       <section  data-background="img/2024/devsummit/2.jpg">
-        <h2 style="text-align: right">Run developer edition</h2>
+        <h2 style="text-align: right; opacity: 0.5;">Run developer edition</h2>
       </section>
 
       <section  data-background="img/2024/devsummit/2.jpg">
@@ -157,7 +159,7 @@
 
       <section data-markdown data-background="img/2024/devsummit/2.jpg">
         <script type="text/template">
-          ## Technologies
+          <h2 style="opacity: 0.5;">Technologies</h2>
 
           - React
           - TypeScript
@@ -167,27 +169,35 @@
 
       <section data-markdown  data-background="img/2024/devsummit/2.jpg">
         <script type="text/template">
-          <!-- ![](img/tech.jpg) -->
+          ## Experience Builder Technologies
+          ![](img/tech.png)
         </script>
       </section>
 
       <section data-markdown  data-background="img/2024/devsummit/2.jpg">
         <script type="text/template">
-          ## Widget Structure
+          <h2>Widget File Structure</h2>
 
-          - Widget
-            - dist/
-              - compiled code
-            - src/
-              - runtime/
-                - widget.tsx
-                - translations/
-              - setting/
-                - setting.tsx
-                - translations/
-            - config.ts
-            - config.json
-            - manifest.json
+          - client
+            - dist-prod/
+              - widgets/
+                - custom-widget/
+                  - compiled code
+            ><small> Note: The dist-prod directory only appears after you have executed the
+            <a href="https://doc.arcgis.com/en/experience-builder/11.0/configure-widgets/add-custom-widgets.htm#ESRI_STEP_F17A226EF0BF487C88E06D39F3AD0A79" target="_blank">
+            `npm run build:prod` command</a>. The documentionation on the 
+            <a href="https://doc.arcgis.com/en/experience-builder/11.0/configure-widgets/add-custom-widgets.htm" target="_blank">Add custom widgets page</a>
+            describes how your organization can use deployed custom widgets in your Enterprise 11.0+ Experience Builder apps.</small>
+            - custom-widget/
+              - manifest.json && (config.ts || config.json)
+              - src/
+                - runtime/
+                  - widget.tsx
+                  - translations/
+                  - lib/ (subcomponents) || util/ (utility) || assets/ (stylesheet(s))
+                - setting/
+                  - setting.tsx
+                  - translations/
         </script>
       </section>
 
@@ -197,6 +207,7 @@
 
           - View concept same as the ArcGIS Maps API for JavaScript
             - View is wrapped in `JimuMapView`
+            - Access the `JimuMapView` via the `JimuMapViewComponent` in a widget
           - To create a JimuMapView object: `MapViewManager.createJimuMapView()`
           - JimuMapView main properties:
 
@@ -215,7 +226,7 @@
 
       <section data-markdown  data-background="img/2024/devsummit/2.jpg">
         <script type="text/template">
-          ## Two styles
+          <h2 style="opacity: 0.5;">Two styles</h2>
 
           ### Style 1: Class components (pre React 16.8)
 
@@ -224,6 +235,8 @@
           - Props accessed via this.props.
           - Uses the render() method.
           ---
+          <h2 style="opacity: 0.5;">Two styles</h2>
+
           ### Style 2: Functional components (introduced at React 16.8)
           - Basic JavaScript function
           - Uses React Hooks to use state and other features.
@@ -235,6 +248,7 @@
       <section data-markdown data-background="img/2024/devsummit/2.jpg">
         <script type="text/template">
           ## Create a widget using class component
+          ><small> Note: Including this because you may run into class component widgets in older codebases.</small>
 
           ```jsx
           import { AllWidgetProps, BaseWidget, jsx } from "jimu-core"
@@ -256,6 +270,7 @@
       <section data-markdown data-background="img/2024/devsummit/2.jpg">
         <script type="text/template">
           ## Create a widget using a functional component
+          ><small> Note: It is recommended that custom widgets be written as functional components.</small>
 
           ```jsx
           import { AllWidgetProps, jsx } from "jimu-core"
@@ -405,7 +420,7 @@
           4. If there is any private content, add `clientId` to `cdn/<app-string>/config.json`
           5. Host the files on a web server
 
-          <!-- ![](img/exb-download.jpg) -->
+          ![](img/exb-download.png)
         </script>
       </section>
 
