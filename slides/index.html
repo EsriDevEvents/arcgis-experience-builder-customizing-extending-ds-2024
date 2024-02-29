@@ -174,28 +174,49 @@
 
       <section data-markdown data-background="img/2024/devsummit/2.jpg">
         <script type="text/template">
-          <h2>Widget File Structure</h2>
+          ## Where Do Custom Widgets Live?
+          ![](img/file-structure/your-extensions-folder.png)
+        </script>
+      </section>
 
-          - client
-            - dist-prod/
-              - widgets/
-                - custom-widget/
-                  - compiled code
-            ><small> Note: The dist-prod directory only appears after you have executed the
+      <section data-markdown data-background="img/2024/devsummit/2.jpg">
+        <script type="text/template">
+          ## Custom Widget Structure
+          ![](img/file-structure/base-folder.png)
+        </script>
+      </section>
+
+      <section data-markdown data-background="img/2024/devsummit/2.jpg">
+        <script type="text/template">
+          ## Custom Widget Structure - settings folder
+          ![](img/file-structure/settings-folder.png)
+        </script>
+      </section>
+
+      <section data-markdown data-background="img/2024/devsummit/2.jpg">
+        <script type="text/template">
+          ## Custom Widget Structure - src folder
+          ![](img/file-structure/src-folder.png)
+        </script>
+      </section>
+
+      <section data-markdown data-background="img/2024/devsummit/2.jpg">
+        <script type="text/template">
+          ## Custom Widget Structure - test folder
+          ![](img/file-structure/tests-folder.png)
+        </script>
+      </section>
+      
+      <section data-markdown data-background="img/2024/devsummit/2.jpg">
+        <script type="text/template">
+          ## Building your custom widget
+
+          ![](img/file-structure/dist-prod-folder.png)
+          ><small> Note: The dist-prod directory only appears after you have executed the
             <a href="https://doc.arcgis.com/en/experience-builder/11.0/configure-widgets/add-custom-widgets.htm#ESRI_STEP_F17A226EF0BF487C88E06D39F3AD0A79" target="_blank">
             `npm run build:prod` command</a>. The documentionation on the 
             <a href="https://doc.arcgis.com/en/experience-builder/11.0/configure-widgets/add-custom-widgets.htm" target="_blank">Add custom widgets page</a>
             describes how your organization can use deployed custom widgets in your Enterprise 11.0+ Experience Builder apps.</small>
-            - custom-widget/
-              - manifest.json && (config.ts || config.json)
-              - src/
-                - runtime/
-                  - widget.tsx
-                  - translations/
-                  - lib/ (subcomponents) || util/ (utility) || assets/ (stylesheet(s))
-                - setting/
-                  - setting.tsx
-                  - translations/
         </script>
       </section>
 
