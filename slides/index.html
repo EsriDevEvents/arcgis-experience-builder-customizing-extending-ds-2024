@@ -63,11 +63,11 @@
         <script type="text/template">
           ## Agenda
 
-          - <span style="opacity: 0.5;">Intro to Experience Builder</span>
+          - Intro to Experience Builder
           - Custom widgets
           - Code collaboration
           - Deployment
-          - Deployment automation (dev ops)
+          - Deployment automation (DevOps)
         </script>
       </section>
 
@@ -87,32 +87,28 @@
       </section> -->
 
       <section data-background="img/2024/devsummit/2.jpg">
-        <h2 style="text-align: left; opacity: 0.5;">Intro to Experience Builder</h2>
+        <h2 style="text-align: left;">Intro to Experience Builder</h2>
       </section>
 
       <section data-background="img/2024/devsummit/2.jpg">
-        <h2 style="opacity: 0.5;">What is ArcGIS Experience Builder</h2>
-        <table>
-          <tr>
-            <td style="width: 50%">
-              <p>
-                ArcGIS Experience Builder empowers you to quickly transform
-                your data into compelling web apps and pages
-              </p>
-              <ul>
-                <li>Start with templates and widgets</li>
-                <li>Extensibility</li>
-              </ul>
-            </td>
-            <td>
-              <img style="vertical-align: top" src="img/exb-jsapi.png" />
-            </td>
-          </tr>
-        </table>
+        <h2>What is ArcGIS Experience Builder?</h2>
+        <div style="display: flex; justify-content: center; gap: 32px;">
+          <div style="width: 50%;">
+            <p>
+              ArcGIS Experience Builder empowers you to quickly transform
+              your data into compelling web apps and pages
+            </p>
+            <ul>
+              <li>Start with templates and widgets</li>
+              <li>Extensibility</li>
+            </ul>
+          </div>
+          <img style="vertical-align: top" src="img/exb-jsapi.png" />
+        </div>
       </section>
 
       <section data-background="img/2024/devsummit/2.jpg">
-        <h2 style="opacity: 0.5;">ArcGIS Experience Builder Editions</h2>
+        <h2>ArcGIS Experience Builder Editions</h2>
         <table>
           <tr>
             <td style="width: 50%; vertical-align: top">
@@ -148,21 +144,11 @@
       </section>
 
       <section data-background="img/2024/devsummit/2.jpg">
-        <h2 style="text-align: right; opacity: 0.5;">Run developer edition</h2>
+        <h2 style="text-align: right;">Run developer edition</h2>
       </section>
 
       <section data-background="img/2024/devsummit/2.jpg">
         <h2 style="text-align: right">Custom widgets</h2>
-      </section>
-
-      <section data-markdown data-background="img/2024/devsummit/2.jpg">
-        <script type="text/template">
-          <h2 style="opacity: 0.5;">Technologies</h2>
-
-          - React
-          - TypeScript
-          - Jimu
-        </script>
       </section>
 
       <section data-markdown data-background="img/2024/devsummit/2.jpg">
@@ -224,7 +210,7 @@
         <script type="text/template">
           ## MapView and SceneView
 
-          - View concept same as the ArcGIS Maps API for JavaScript
+          - View concept same as the ArcGIS Maps SDK for JavaScript
             - View is wrapped in `JimuMapView`
             - Access the `JimuMapView` via the `JimuMapViewComponent` in a widget
           - To create a JimuMapView object: `MapViewManager.createJimuMapView()`
@@ -232,7 +218,7 @@
 
           | Property | Description |
           | --- | --- |
-          | `view` | MapView/SceneView object (from ArcGIS Maps API for JavaScript) |
+          | `view` | MapView/SceneView object (from ArcGIS Maps SDK for JavaScript) |
           | `dataSourceId` | Data Source used to create the view |
           | `mapWidgetId` | the widget that creates the objects |
           | `jimuLayerViews` | the layer view object wrapper |
@@ -359,11 +345,10 @@
         <script type="text/template">
           ## Web extension repo
 
-          - Folder
-          - Within the `client/` Folder
+          - Folder within the `client/` folder (i.e. `client/my-web-extension-repo`)
           - Contains a `manifest.json` file with the contents:
 
-          ```
+          ```ts
           {
             "name": "my-web-extension-repo",
             "type": "exb-web-extension-repo",
@@ -446,7 +431,7 @@
       <section data-background="img/2024/devsummit/2.jpg">
         <h2 style="text-align: left">Deployment automation</h2>
         <p style="text-align: left; color: var(--r-section-subhead-color)">
-          Dev ops
+          DevOps
         </p>
       </section>
 
@@ -454,9 +439,8 @@
         <script type="text/template">
           ## Why automation?
 
-          - Faster builds
-          - Consistent builds
-          - Test integration
+          - Faster & more consistent builds
+          - Testing integration
           - The "reference" application
           - Branch deployments
         </script>
